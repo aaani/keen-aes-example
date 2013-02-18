@@ -12,7 +12,7 @@ Use it like so:
       "operator" => "eq",
       "property_value" => "123456"
     }])
-    token.encrypt! => "4d1982fe601b359a5cab7ac7845d3bf27026936cdbf8ce0ab4ebcb6930d6cf7f139e..."
+    token.encrypt! # "4d1982fe601b359a5cab7ac7845d3bf27026936cdbf8ce0ab4ebcb6930d6cf7f139e..."
 
 Use the result as the authorization object for future queries, and those queries
 will be scoped to the given filters. Your API Key cannot be reverse engineered
