@@ -5,5 +5,5 @@ rescue LoadError
 end
 
 require 'rspec'
-require File.expand_path("../../lib/keen/token", __FILE__)
+require File.expand_path("../../lib/keen/scopedkey", __FILE__)
 

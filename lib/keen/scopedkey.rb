@@ -2,7 +2,7 @@ require 'multi_json'
 require 'keen/aes_helper'
 
 module Keen
-  class Token
+  class ScopedKey
     include AESHelper
     extend AESHelper
 
@@ -10,8 +10,8 @@ module Keen
     attr_accessor :data
 
     class << self
-      def decrypt!(api_key, token)
-        encrypted = unhexlify(token)
+      def decrypt!(api_key, scoped_key)
+        encrypted = unhexlify(scoped_key)
         padded_api_key = pad(api_key)
         decrypted = aes256_decrypt(padded_api_key, encrypted)
         data = MultiJson.load(decrypted)
